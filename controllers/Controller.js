@@ -195,7 +195,7 @@ function ActualizaPremio (IDCOD, IDUSER, FECHA){
     const registroCodigo =  pool.db('Parcial2').collection('codigos').updateOne({ _id: IDCOD}, { $set: {estado: IDUSER, fecha: FECHA} } );
     if (registroCodigo) {
       console.log("Codigo registrado al usuario.");
-      return  "Codigo registrado";
+      return  "Codigo registrado exitosamente";
     } else {
       console.log("Error actualicanzo registro del codigo al usuario.");
       return "Error actualicanzo registro del codigo.";
@@ -355,7 +355,7 @@ const InfoTablaUser = async (req, res) => {
 const InfoTablaAdmin1 = async (req, res) => {
   try {
     // Buscar en la colección 'codigos' los documentos que tengan el estado  con el id del user  autenticado
-    const DatosPremio = await pool.db('Parcial2').collection('intentos').find({premio: "Ganaste 1.000.000"}).toArray();
+    const DatosPremio = await pool.db('Parcial2').collection('intentos').find().toArray();
     
     if (!Object.keys(DatosPremio).length == 0 ) {
       res.json( DatosPremio );
