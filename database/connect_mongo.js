@@ -15,7 +15,7 @@ const client = new MongoClient(uri, {
 const validatedb = async  () => {
     try {
       await  client.connect()
-      console.log('Conexion a mongodb exitosa!');
+      console.log('Conexion a mongodb exitosamente!');
     } catch (error) {
       console.error(error);
     }

@@ -323,7 +323,7 @@ const InfoUser = async (req, res) => {
       res.json( DatosUser );
     }else{
       console.log('No hay datos registrados para el usuario.');
-      res.json({ status: "No hay datos registrados para el usuario." });
+      res.json({ status: "No hay datos registrados para este usuario." });
     }
 
   } catch (error) {
@@ -342,7 +342,7 @@ const InfoTablaUser = async (req, res) => {
     if (!Object.keys(DatosPremio).length == 0 ) {
       res.json( DatosPremio );
     }else{
-      res.json([{ status: "No hay codigos registrados para el usuario", _id: "", codigo: "", premio: "", estado: "", fecha: "" }] );
+      res.json([{ status: "No hay registros de codigo para el usuario", _id: "", codigo: "", premio: "", estado: "", fecha: "" }] );
     }
 
   } catch (error) {
@@ -364,7 +364,7 @@ const InfoTablaAdmin1 = async (req, res) => {
     }
 
   } catch (error) {
-    console.error('Error al consultar la base de datos:', error);
+    console.error('Error al consultarse con la base de datos:', error);
     res.status(500).json({ status: "Error", message: "Internal Server Error" });
   }
 };
