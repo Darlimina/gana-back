@@ -133,7 +133,7 @@ const NewAdmin = async (req, res) => {
   }
 };
 
-//------------- metodo  para registrar Codigo --------------------- TEMP
+//------------- metodo  para registrar Codigo --------------------- TEMP//
 const RegistroCodigo = async (req, res) => {
   const datos = req.body;
   console.log("DATOS enviados de codigo: ", datos);
